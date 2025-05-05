@@ -1,0 +1,21 @@
+.header {
+    width: 100%;
+    height: 135px;
+    margin: 0;
+    padding: 0;
+    top: 0;
+    left: 0;
+    background-color: #0a002c; /* Adjust this to your design */
+    display: flex;
+    align-items: center;
+    padding: 0 30px;
+    box-sizing: border-box;
+    z-index: 1000;
+  }
+  
+  .logo {
+    height: 100px;
+    width: auto;
+  }
+  
+  

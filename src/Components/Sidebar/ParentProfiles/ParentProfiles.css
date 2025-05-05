@@ -1,0 +1,258 @@
+.search-container {
+  position: relative;
+  display: inline-block;
+  width: 348px;
+  height: 57px;
+  margin-right:13px;
+}
+
+.search {
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  outline: none;
+  width: 100%;
+  height: 100%;
+  background-color: #D9D9D9;
+  
+  font-size: 20px;
+  
+}
+
+.search-icon {
+  position: absolute;
+  right: 15px; /* Increased right padding */
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px; /* Increased size from 18px */
+  height: 40px; /* Increased size from 18px */
+  pointer-events: none; /* This ensures clicks go through to the input */
+}
+
+
+.parent-container {
+  background: #fff;
+  padding: 10px;
+  padding-bottom:30px;
+  border-radius: 12px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.05);
+  margin-bottom: 40px;
+  box-shadow: inset 0px 0px 4px 0px #00000040;
+}
+
+.parent-header-box{
+  box-shadow:none !important;
+}
+.parent-container .key-stats-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+
+
+.parent-breadcrumb {
+  color: #5e5e5e;
+  font-weight: 500;
+  font-size: 20px;
+}
+
+.parent-breadcrumb b {
+    color: #000000;
+    font-weight: 500;
+    font-size: 24px;
+  }
+
+  .add-btn {
+    background-color: #d3d3d3;
+    border: none;
+    width: 194px;
+    height: 57px;
+    padding: 10px;
+    gap: 10px;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom:40px;
+}
+
+.filter-bar {
+  display: flex;
+  gap: 13px;
+  margin-bottom: 40px;
+  align-items: center;
+  margin-left:16px;
+}
+
+/* .search {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    font-size: 16px;
+  } */
+
+/* .search {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+} */
+
+.search__input {
+  font-family: inherit;
+  font-size: inherit;
+  background-color: #f4f2f2;
+  border: none;
+  color: #646464;
+  padding: 0.7rem 1rem;
+  border-radius: 30px;
+  width: 12em;
+  transition: all ease-in-out 0.5s;
+  margin-right: -2rem;
+}
+
+.search__input:hover,
+.search__input:focus {
+  box-shadow: 0 0 1em #00000013;
+}
+
+.search__input:focus {
+  outline: none;
+  background-color: #f0eeee;
+}
+
+.search__input::-webkit-input-placeholder {
+  font-weight: 100;
+  color: #ccc;
+}
+
+.search__input:focus + .search__button {
+  background-color: #f0eeee;
+}
+
+.search__button {
+  border: none;
+  background-color: #f4f2f2;
+  margin-top: 0.1em;
+}
+
+.search__button:hover {
+  cursor: pointer;
+}
+
+.search__icon {
+  height: 1.3em;
+  width: 1.3em;
+  fill: #b4b4b4;
+}
+
+.filter-bar button {
+  background-color: #d3d3d3;
+  border: none;
+  padding: 13px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  width: 100px;
+}
+
+.table-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+  
+
+.parent-header, .parent-profile-row {
+  display: grid
+;
+  grid-template-columns: 1.2fr 2fr 1.5fr 1.2fr 1.2fr 0.8fr !important;
+  padding: 12px 16px;
+  /* border-radius: 10px; */
+  align-items: center;
+  height: 70px;
+  border-radius: 19px;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+/* .table-row .name {
+    font-weight: 450;
+    font-size: 14px;
+    color: #000000;
+}
+
+.table-row .email {
+    font-weight: 600;
+    font-size: 14px;
+    color: #414141;
+}
+
+.table-row .phone {
+    font-weight: 550;
+    font-size: 14px;
+    color: #000000;
+}
+
+.table-row .type , .location {
+    font-weight: 550;
+    font-size: 14px;
+    color: #000000;
+} */
+
+.table-header {
+  display: grid
+;
+  grid-template-columns: 1.2fr 1.8fr 1.2fr 1.2fr 1.2fr 0.8fr !important;
+  background-color: transparent !important;
+  border: none !important;
+  padding-left: 40px;
+  padding-bottom: 16px;
+  color: #535353;
+  box-shadow: none;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-style: italic;
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: 0%;
+}
+
+.table-row {
+  background-color: #fff;
+  border: 1px solid #eee;
+}
+
+.view-btn {
+  background-color: black;
+  color: white;
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 18px;
+  border: none;
+  cursor: pointer;
+  max-width:111px;
+  width:100%;
+  height:43px;
+}
+.parent-profile-row .email{
+  color: #414141;
+
+}
+
+.filter-bar button{
+  background-color: #d3d3d3;
+  border: none;
+  padding: 13px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size:16px;
+  font-weight: 500;
+  max-width: 123px;
+  width: 100%;
+  height:57px;
+
+}
+
+
