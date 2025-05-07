@@ -1,13 +1,19 @@
 import { Routes, Route } from "react-router-dom";
 import Layout from "../Components/Layout/layout";
-import Admin from "../Pages/Admin";
+import DashboardPage from "../Pages/Dashboard";
+import ParentProfiles from "../Pages/UserManagement/ParentProfiles/ParentProfiles";
+import PlayerProfiles from "../Pages/UserManagement/PlayerProfiles/PlayerProfiles";
+import Appointments from "../Pages/Appointments/Appointments";
 
 
 const Routing = () => {
   return (
     <Routes>
       <Route element={<Layout />}>
-        <Route path="/admin/dashboard" element={<Admin />} />
+        <Route path="/" element={<DashboardPage />} />
+        <Route path="/user-management/parent-profile" element={<ParentProfiles />} />
+        <Route path="/user-management/player-profile" element={<PlayerProfiles />} />
+        <Route path="/appointments" element={<Appointments />} />
       </Route>
     </Routes>
   );
