@@ -1,8 +1,8 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
 import Header from "../Header/Header";
-// import Footer from "../Footer/Footer";
 import Sidebar from "../Sidebar/Sidebar";
+import Breadcrumbs from "../../Components/Breadcrumbs/Breadcrumbs";
 
 const Layout = () => {
   return (
@@ -14,11 +14,13 @@ const Layout = () => {
             <Sidebar />
           </div>
           <div className="app-content">
+            <div className="app-content-breadcrumb p-4">
+              <Breadcrumbs />
+            </div>
             <Outlet />
           </div>
         </div>
       </div>
-      {/* <Footer /> */}
     </div>
   );
 };

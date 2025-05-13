@@ -14,9 +14,6 @@ const ParentProfiles = () => {
     <>
       <div className="parent-container parent-header-box">
         <div className="parent-header">
-          <span className="parent-breadcrumb">
-            User Management  &gt;  <b>Parent Profiles</b>
-          </span>
           <button className="add-btn">Add New Parent</button>
         </div>
       </div>

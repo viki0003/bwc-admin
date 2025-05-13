@@ -1,0 +1,65 @@
+.player-info .player-info-header {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 27px;
+}
+
+.player-info .player-info-header .pih-item p {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 100%;
+    color: #000;
+}
+
+.player-info hr {
+    margin-top: 40px;
+    margin-bottom: 15px;
+    border-color: #434343;
+}
+
+.associated-parents .ap-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+}
+
+.associated-parents .ap-list .ap-item {
+    display: flex;
+    gap: 18px;
+    align-items: stretch;
+}
+
+.associated-parents .ap-list .ap-item .api-content {justify-content: space-between;}
+
+.associated-parents .ap-list .ap-item .api-content .ac-cnt {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.associated-parents .ap-list .asspr-item label {
+    font-family: Inter;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 100%;
+    color: #000;
+    margin-bottom:16px;
+    display: block;
+}
+
+.associated-parents .ap-list .asspr-item {
+    border-left: 1px solid #000000;
+    padding-left: 43px;
+}
+
+.associated-parents .ap-list .asspr-item:first-child {
+    border: 0px;
+    padding: 0;
+}
+
+.player-info,
+.parent-info {
+    box-shadow: 0px 0px 4px 0px #00000040;
+    padding: 32px;
+    border-radius: 10px;
+}

@@ -1,0 +1,66 @@
+.parent-info .parent-info-header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 27px;
+}
+
+.parent-info hr {
+    margin-top: 40px;
+    margin-bottom: 15px;
+    border-color: #434343;
+}
+
+.associated-players h3 {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 100%;
+    color: #000;
+    margin-bottom: 16px;
+}
+
+.associated-players .ap-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.associated-players .ap-list .ap-item {
+    display: flex;
+    align-items: center;
+    gap:18px;
+}
+
+.ap-list .ap-item .api-img {
+    width: 170px;
+    height: 213px;
+    border-radius: 8px;
+    background: #D9D9D9;
+}
+
+.ap-list .ap-item .api-content {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.ap-list .ap-item .api-content .api-ga {
+    display: flex;
+    gap: 62px;
+}
+
+.ap-list .ap-item .api-content button {
+    background: #000000;
+    padding: 14px 21px;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 100%;
+    color: #FFFFFF;
+    border-radius: 8px;
+}
+
+.parent-info .parent-info-header .pih-item p,
+.ap-list .ap-item .api-content p  {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 100%;
+    color: #000;
+}
