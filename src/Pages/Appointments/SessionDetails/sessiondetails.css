@@ -1,0 +1,110 @@
+.sessiondetails {
+    display: flex;
+    align-items: flex-start;
+    gap: 75px;
+}
+
+.sessiondetails .sd-content h1 {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 100%;
+    color: #000;
+    margin-bottom: 25px;
+}
+
+.sessiondetails .sd-content .sd-cnt-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px 99px;
+}
+
+.sessiondetails .sd-content .sd-cnt-list .sd-cnt-list-item strong {
+    font-family: Inter;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 100%;
+}
+
+.sessiondetails .sd-content .sd-cnt-list .sd-cnt-list-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.sessiondetails .sd-content .sd-cnt-list .sd-cnt-list-item p {
+    font-family: Inter;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 100%;
+    color: #000;
+}
+
+.sd-content hr {border: 2px solid #A7A7A7;margin: 24px 0px;}
+
+.sd-cnt-ftr {
+    display: flex;
+    gap: 57px;
+}
+
+.sd-cnt-ftr .sd-cnt-ftr-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.sessiondetails-btn {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 250px;
+}
+
+button.btn {
+    width: 208px;
+    height: 53px;
+    border-radius: 10px;
+    padding: 10px;
+    font-family: Inter;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 100%;
+    border: 0;
+    cursor: pointer;
+}
+
+button.btn.blue {
+    background: #003E9A;
+    color: #fff;
+}
+
+button.btn.black {
+    background: #000;
+    color: #fff;
+}
+
+button.btn.red {
+    background: #FF0000;
+    color: #fff;
+}
+
+.at-btns {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+}
+
+button.btn.gold {
+    background: #C7822D;
+    color: #fff;
+}
+
+button.btn.white {
+    background: #fff;
+    border: 2px solid #000;
+}
+
+.at-btns button.btn {
+    max-width: 40%;
+    width: 100%;
+}

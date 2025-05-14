@@ -1,0 +1,70 @@
+.reschedule-session h1 {
+    font-family: Inter;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 100%;
+    color: #000;
+    margin-bottom: 20px;
+}
+
+.reschedule-session .reschedule-session-form form {
+    display: flex;
+    gap: 20px 75px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.reschedule-session-form form .form-group .fg-item {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin-bottom: 20px;
+}
+
+.form-group .fg-item label {
+    font-family: Inter;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 100%;
+    color: #212121;
+}
+
+.form-group .fg-item input {
+    width: 238px;
+    height: 46px;
+    border-radius: 10px;
+    background: #EFEFEF;
+    border: 0;
+    padding: 10px;
+}
+
+.form-group .fg-item textarea {
+    width: 490px;
+    height: 111px;
+    border-radius: 10px;
+    background: #EFEFEF;
+    border: 0;
+    padding: 10px;
+}
+
+.reschedule-session .reschedule-session-form form .submit-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.reschedule-session .reschedule-session-form form .submit-btn button.btn.black {
+    max-width: 302px;
+    width: 100%;
+}
+
+.form-group.rs-ta .fg-item {
+    align-items: flex-start !important;
+}
+
+.reschedule-session {
+    box-shadow: 0px 0px 4px 0px #00000040;
+    padding: 20px;
+    border-radius: 10px;
+}

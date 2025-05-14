@@ -1,0 +1,66 @@
+
+.p-dialog .p-dialog-header {
+    padding: 30px 30px 20px 30px;
+}
+
+.p-dialog .p-dialog-content {
+    padding: 0px 30px 30px 30px;
+}
+
+.p-dialog .p-dialog-content .assign-trainer .at-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 35px;
+    background: #F4F4F4;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.p-dialog .p-dialog-content .assign-trainer .at-header .at-header-item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.assign-trainer .slct-trainer {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 24px;
+}
+
+.assign-trainer .slct-trainer p {
+    width: 175px;
+    font-family: Inter;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 100%;
+    color: #000;
+}
+
+.assign-trainer .slct-trainer select.trainer-select {
+    background: #EBEBEB;
+    padding: 12px 20px;
+    border: 0;
+    appearance: none;
+    text-align: left;
+    font-family: Inter;
+    font-weight: 500;
+    font-style: italic;
+    font-size: 16px;
+    line-height: 100%;
+    color: #6C6C6C;
+    border-radius: 8px;
+}
+
+.assign-trainer .slct-trainer  textarea.trainer-message {
+    border: 0;
+    background: #F3F3F3;
+    padding: 15px;
+    border-radius: 8px;
+    font-family: Inter;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 140%;
+    color: #484848;
+}

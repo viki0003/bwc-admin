@@ -7,6 +7,9 @@ import Appointments from "../Pages/Appointments/Appointments";
 import AddLocation from "../Pages/Dashboard/AddLocation";
 import ParentInfo from "../Pages/UserManagement/ParentProfiles/ParentInfo";
 import PlayerInfo from "../Pages/UserManagement/PlayerProfiles/PlayerInfo/PlayerInfo";
+import SessionDetails from "../Pages/Appointments/SessionDetails/SessionDetails";
+import RescheduleSession from "../Pages/Appointments/SessionDetails/RescheduleSession/RescheduleSession";
+import CancelSession from "../Pages/Appointments/SessionDetails/CancelSession/CancelSession";
 
 const Routing = () => {
   return (
@@ -23,6 +26,18 @@ const Routing = () => {
           element={<PlayerProfiles />}
         />
         <Route path="/appointments" element={<Appointments />} />
+        <Route
+          path="/appointments/session-details"
+          element={<SessionDetails />}
+        />
+        <Route
+          path="/appointments/reschedule-session"
+          element={<RescheduleSession />}
+        />
+        <Route
+          path="/appointments/cancel-session"
+          element={<CancelSession />}
+        />
         <Route path="/user-management/parent-info" element={<ParentInfo />} />
         <Route path="/user-management/player-info" element={<PlayerInfo />} />
       </Route>

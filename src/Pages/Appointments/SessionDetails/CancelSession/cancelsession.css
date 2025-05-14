@@ -1,0 +1,59 @@
+.cancel-session hr {
+    margin-bottom: 20px;
+    border: 1px solid #000;
+}
+
+.cancel-session h1 {
+    font-family: Inter;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 100%;
+    color: #000;
+    margin-bottom: 30px;
+}
+
+.cancel-session .cs-row {
+    display: flex;
+    align-items: center;
+    gap: 99px;
+    margin-bottom: 30px;
+}
+
+.cancel-session .cs-row .cs-col {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.cancel-session .cs-row .cs-col strong {font-family: Inter;font-weight: 600;font-size: 16px;line-height: 100%;color: #000;}
+
+.cancel-session .cs-row .cs-col span {
+    font-family: Inter;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 100%;
+    color: #000;
+}
+
+.cancel-session .note-field {
+    display: flex;
+    gap: 24px;
+}
+
+.cancel-session .note-field label {
+    font-family: Inter;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 100%;
+    color: #000;
+}
+
+.cancel-session .note-field textarea {
+    width: 490px;
+    height: 130px;
+    border-radius: 10px;
+    background: #F0F0F0;
+    border: 0;
+    padding: 10px;
+    overflow: auto;
+}
