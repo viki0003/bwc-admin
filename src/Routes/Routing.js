@@ -10,6 +10,11 @@ import PlayerInfo from "../Pages/UserManagement/PlayerProfiles/PlayerInfo/Player
 import SessionDetails from "../Pages/Appointments/SessionDetails/SessionDetails";
 import RescheduleSession from "../Pages/Appointments/SessionDetails/RescheduleSession/RescheduleSession";
 import CancelSession from "../Pages/Appointments/SessionDetails/CancelSession/CancelSession";
+import Scheduler from "../Pages/Scheduler/Scheduler";
+import ViewSession from "../Pages/Scheduler/ViewSession/ViewSession";
+import AddSession from "../Pages/Scheduler/AddSession/AddSession";
+import TrainersLogin from "../Pages/Trainers/TrainersLogin/TrainersLogin";
+import TrainersCreateAccount from "../Pages/Trainers/TrainersCreateAccount/TrainersCreateAccount"
 
 const Routing = () => {
   return (
@@ -40,7 +45,12 @@ const Routing = () => {
         />
         <Route path="/user-management/parent-info" element={<ParentInfo />} />
         <Route path="/user-management/player-info" element={<PlayerInfo />} />
+        <Route path="/scheduler" element={<Scheduler />} />
+        <Route path="/scheduler/view-session" element={<ViewSession />} />
+        <Route path="/scheduler/add-session" element={<AddSession />} />
       </Route>
+      <Route path="/trainers-login" element={<TrainersLogin />} />
+      <Route path="/trainers-create-account" element={<TrainersCreateAccount />} />
     </Routes>
   );
 };

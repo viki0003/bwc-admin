@@ -1,0 +1,52 @@
+.view-session h2 {
+    font-family: Inter;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 100%;
+    color: #000;
+    margin-bottom: 20px;
+}
+
+.view-session .view-session-form form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px 20px;
+}
+
+.view-session .view-session-form form .form-item {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    width: calc(20% - 17px);
+}
+
+.view-session-form form .form-item label {
+    font-family: Inter;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 100%;
+    color: #3d3d3d;
+}
+
+.view-session-form form .form-item input {
+    background: #EFEFEF;
+    border: 0;
+    padding: 10px;
+    border-radius: 10px;
+    height: 36px;
+}
+
+.view-session-form form .submit-button {
+    flex: 0 0 100%;
+    max-width: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.view-session-form form .submit-button button {
+    max-width: 348px;
+    width: 100%;
+}

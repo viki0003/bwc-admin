@@ -1,0 +1,62 @@
+
+.scheduler .scheduler-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+}
+
+.scheduler .scheduler-header h2 {
+    font-family: Inter;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 100%;
+    color: #000;
+}
+
+.scheduler .scheduler-header .scheduler-header-buttons {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.scheduler .scheduler-tab {
+    margin-top: 20px;
+}
+
+.scheduler .scheduler-tab .p-tabview .p-tabview-nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 19px;
+}
+
+.scheduler .scheduler-tab .p-tabview .p-tabview-nav-container .p-tabview-nav-content ul.p-tabview-nav {
+    padding: 15px 20px;
+    background: #F2F2F2;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.scheduler .scheduler-tab .p-tabview .p-tabview-nav-container .p-tabview-nav-content ul.p-tabview-nav li.p-unselectable-text a {
+    font-family: Inter;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 100%;
+    color: #000;
+    background: transparent;
+    border: 0;
+}
+
+.scheduler .scheduler-tab .p-tabview .p-tabview-nav-container .p-tabview-nav-content ul.p-tabview-nav li.p-unselectable-text.p-tabview-selected.p-highlight a {
+    padding: 10px;
+    border-radius: 9px;
+    background: #C7822D;
+    font-family: Inter;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 100%;
+    color: #fff;
+}

@@ -59,7 +59,7 @@
     width: 250px;
 }
 
-button.btn {
+.btn {
     width: 208px;
     height: 53px;
     border-radius: 10px;
@@ -70,19 +70,20 @@ button.btn {
     line-height: 100%;
     border: 0;
     cursor: pointer;
+    text-decoration: none;
 }
 
-button.btn.blue {
+.btn.blue {
     background: #003E9A;
     color: #fff;
 }
 
-button.btn.black {
+.btn.black {
     background: #000;
     color: #fff;
 }
 
-button.btn.red {
+.btn.red {
     background: #FF0000;
     color: #fff;
 }
@@ -94,12 +95,12 @@ button.btn.red {
     gap: 24px;
 }
 
-button.btn.gold {
+.btn.gold {
     background: #C7822D;
     color: #fff;
 }
 
-button.btn.white {
+.btn.white {
     background: #fff;
     border: 2px solid #000;
 }

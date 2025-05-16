@@ -116,10 +116,7 @@ const Appointments = () => {
 
   return (
     <>
-      <div className="dashboard">
-        <h2>Appointments</h2>
-      </div>
-
+    
       <div className="full-container">
         <div className="key-stats-header">
           <p>Appointments Table</p>

@@ -4,11 +4,6 @@ import "./Dashboard.css";
 const Dashboard = () => {
   return (
     <>
-      <div className="dashboard">
-        <h2>Dashboard</h2>
-        {/* <p>Key Stats</p> */}
-      </div>
-
       <div className="parent-container">
         <div className="key-stats-header">
         <p>Key Stats</p>

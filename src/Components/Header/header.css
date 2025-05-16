@@ -8,7 +8,6 @@
     background-color: #0a002c; /* Adjust this to your design */
     display: flex;
     align-items: center;
-    padding: 0 30px;
     box-sizing: border-box;
     z-index: 1000;
   }
