@@ -1,6 +1,7 @@
 import React from "react";
 import { TabView, TabPanel } from "primereact/tabview";
 import "./scheduler.css";
+import { Link } from "react-router-dom";
 
 const Scheduler = () => {
   return (
@@ -8,8 +9,12 @@ const Scheduler = () => {
       <div className="scheduler-header">
         <h2>Weekly Schedule - 21 Apr 2025 to 27 Apr 2025 </h2>
         <div className="scheduler-header-buttons">
-          <button className="btn">Edit Schedule</button>
-          <button className="btn">Add a New Session </button>
+          <Link to="/scheduler/view-session" className="btn">
+            Edit Schedule
+          </Link>
+          <Link to="/scheduler/add-session" className="btn">
+            Add a New Session{" "}
+          </Link>
         </div>
       </div>
       <div className="scheduler-tab">

@@ -12,18 +12,18 @@ const parents = Array(7).fill({
 const PlayerProfiles = () => {
   return (
     <>
-    <div className="parent-container parent-player-header">
-    <div className="parent-header">
+      <div className="parent-container parent-player-header">
+        <div className="parent-header">
           <span className="parent-breadcrumb">
-            User Management  &gt;  <b>Player Profiles</b>
+            User Management &gt; <b>Player Profiles</b>
           </span>
           <button className="add-btn">Add New Player</button>
         </div>
-    </div>
-    
+      </div>
+
       <div className="parent-container">
-      <div className="filter-bar">
-      <div className="search-container">
+        <div className="filter-bar">
+          <div className="search-container">
             <input className="search" type="text" />
             <svg
               className="search-icon"
@@ -47,34 +47,36 @@ const PlayerProfiles = () => {
               />
             </svg>
           </div>
-        <button>Date Range</button>
-        <button>Age</button>
-        <button>Player Tags</button>
-        <button>Subscription</button>
-        <button>Sports</button>
-      </div>
-
-      <div className="table-wrapper">
-        <div className="table-header player-header">
-          <div>Name</div>
-          <div>Parent Name</div>
-          <div>Package</div>
-          <div>Session Left</div>
-          <div>Sport</div>
-          <div></div>
+          <button>Date Range</button>
+          <button>Age</button>
+          <button>Player Tags</button>
+          <button>Subscription</button>
+          <button>Sports</button>
         </div>
-        {parents.map((parent, index) => (
-          <div className="table-row player-profile-row" key={index}>
-            <div className="name"><b>{parent.name}</b></div>
-            <div className="email">{parent.parent_name}</div>
-            <div className="phone">{parent.package}</div>
-            <div className="type">{parent.sessions_left}</div>
-            <div className="location">{parent.sports}</div>
-            {/* <div><button className="view-btn">View</button></div> */}
+
+        <div className="table-wrapper">
+          <div className="table-header player-header">
+            <div>Name</div>
+            <div>Parent Name</div>
+            <div>Package</div>
+            <div>Session Left</div>
+            <div>Sport</div>
+            <div></div>
           </div>
-        ))}
+          {parents.map((parent, index) => (
+            <div className="table-row player-profile-row" key={index}>
+              <div className="name">
+                <b>{parent.name}</b>
+              </div>
+              <div className="email">{parent.parent_name}</div>
+              <div className="phone">{parent.package}</div>
+              <div className="type">{parent.sessions_left}</div>
+              <div className="location">{parent.sports}</div>
+              {/* <div><button className="view-btn">View</button></div> */}
+            </div>
+          ))}
+        </div>
       </div>
-    </div>
     </>
   );
 };

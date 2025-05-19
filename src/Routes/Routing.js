@@ -14,7 +14,9 @@ import Scheduler from "../Pages/Scheduler/Scheduler";
 import ViewSession from "../Pages/Scheduler/ViewSession/ViewSession";
 import AddSession from "../Pages/Scheduler/AddSession/AddSession";
 import TrainersLogin from "../Pages/Trainers/TrainersLogin/TrainersLogin";
-import TrainersCreateAccount from "../Pages/Trainers/TrainersCreateAccount/TrainersCreateAccount"
+import TrainersCreateAccount from "../Pages/Trainers/TrainersCreateAccount/TrainersCreateAccount";
+import TrainerManagement from "../Pages/TrainerManagement/TrainerManagement";
+import ReportsAnalytics from "../Pages/ReportsAnalytics/ReportsAnalytics";
 
 const Routing = () => {
   return (
@@ -48,9 +50,14 @@ const Routing = () => {
         <Route path="/scheduler" element={<Scheduler />} />
         <Route path="/scheduler/view-session" element={<ViewSession />} />
         <Route path="/scheduler/add-session" element={<AddSession />} />
+        <Route path="/trainer-management" element={<TrainerManagement />} />
+        <Route path="/reports-analytics" element={<ReportsAnalytics />} />
       </Route>
       <Route path="/trainers-login" element={<TrainersLogin />} />
-      <Route path="/trainers-create-account" element={<TrainersCreateAccount />} />
+      <Route
+        path="/trainers-create-account"
+        element={<TrainersCreateAccount />}
+      />
     </Routes>
   );
 };

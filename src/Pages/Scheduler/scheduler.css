@@ -60,3 +60,11 @@
     line-height: 100%;
     color: #fff;
 }
+
+ a.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #D9D9D9;
+    color: #000;
+}
