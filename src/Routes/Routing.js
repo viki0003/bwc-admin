@@ -15,12 +15,6 @@ import ViewSession from "../Pages/Scheduler/ViewSession/ViewSession";
 import AddSession from "../Pages/Scheduler/AddSession/AddSession";
 import TrainersLogin from "../Pages/Trainers/TrainersLogin/TrainersLogin";
 import TrainersCreateAccount from "../Pages/Trainers/TrainersCreateAccount/TrainersCreateAccount";
-import TrainersHome from "../Pages/Trainers/TrainersHome";
-import MySessions from "../Pages/Trainers/MySessions";
-import Notif from "../Pages/Trainers/Notification";
-import Profile from "../Pages/Trainers/Profile";
-// import Availability from "../Pages/Trainers/Availability";
-
 import TrainerManagement from "../Pages/TrainerManagement/TrainerManagement";
 import ReportsAnalytics from "../Pages/ReportsAnalytics/ReportsAnalytics";
 
@@ -64,12 +58,6 @@ const Routing = () => {
         path="/trainers-create-account"
         element={<TrainersCreateAccount />}
       />
-      <Route path="/Trainers-Home" element={<TrainersHome />} />
-      <Route path="/MySessions" element={<MySessions />} />
-      <Route path="/Notifications" element={<Notif />} />
-      <Route path="/Profile" element={<Profile />} />
-      {/* <Route path="/Availability" element={<Availability />} /> */}
-
     </Routes>
   );
 };
