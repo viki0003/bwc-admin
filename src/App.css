@@ -44,3 +44,31 @@
 .app-sidebar {
   width: 100%;
 }
+
+@media (max-width:991px){
+  .app-container {
+    grid-template-columns: 1fr;
+}
+
+.app-sidebar {
+  display: none;
+}
+
+.sidebar .sidebar-item a {
+  justify-content: start;
+  padding: 0 20px;
+}
+
+
+.sidebar-item span {
+  padding: 0px 20px;
+}
+
+.sidebar-item {
+  justify-content: start;
+}
+
+.p-sidebar-header.p-sidebar-custom-header {
+  padding: 0px 17px;
+}
+}

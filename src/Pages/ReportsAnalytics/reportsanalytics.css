@@ -1,0 +1,85 @@
+.reports-analytics {
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+}
+
+.reports-analytics .block-analytics {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.block-analytics .block-analytics-lists {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.block-analytics .block-analytics-lists .block-analytics-item {
+    width: calc(20% - 20px);
+    background: #F2F2F2;
+    padding: 16px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 200px;
+}
+
+.block-analytics .block-analytics-lists .block-analytics-item .block-analytics-item-icon {
+    width: 100%;
+    display: block;
+    height: 150px;
+}
+
+.block-analytics .block-analytics-lists .block-analytics-item p {
+    text-align: center;
+    font-family: Inter;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 100%;
+    color: #272727;
+    line-height: 25px;
+}
+
+.block-analytics .block-analytics-lists .block-analytics-item .block-group-anlytcs {
+    display: flex;
+    width: 100%;
+    height: 130px;
+    align-items: center;
+}
+
+
+.block-group-anlytcs .block-analytics-item-icon {
+    display: block;
+    width: 100%;
+    height: 50px;
+}
+
+.block-analytics .block-analytics-lists .block-analytics-item .block-group-anlytcs .block-analytics-item-icon {
+    height: 125px;
+}
+
+.block-analytics .block-analytics-lists .block-analytics-item .block-group-anlytcs .vertical-line {
+    display: flex;
+    width: 1px;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.block-analytics .block-analytics-lists .block-analytics-item .block-group-anlytcs .vertical-line span {
+    display: block;
+    width: 1px;
+    height: 80%;
+    background: #000;
+}
+
+.reports-analytics .block-analytics h4 {
+    font-family: Inter;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 100%;
+    color: #272727;
+}

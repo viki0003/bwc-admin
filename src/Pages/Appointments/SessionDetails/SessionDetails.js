@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Dialog } from "primereact/dialog";
 import "./sessiondetails.css";
 import AssignTrainer from "./AssignTrainer/AssignTrainer";
+import { Link } from "react-router-dom";
 const SessionDetails = () => {
   const [visible, setVisible] = useState(false);
 
@@ -51,8 +52,8 @@ const SessionDetails = () => {
         <button className="btn blue" onClick={() => setVisible(true)}>
           Assign Trainer
         </button>
-        <button className="btn black">Modify Session</button>
-        <button className="btn red">Cancel Session</button>
+        <Link to="/appointments/reschedule-session" className="btn black">Modify Session</Link>
+        <Link to="/appointments/cancel-session" className="btn red">Cancel Session</Link>
       </div>
 
       <Dialog

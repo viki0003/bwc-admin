@@ -1,5 +1,6 @@
 import React from "react";
 import "./Dashboard.css";
+import { Link } from "react-router-dom";
 
 const Dashboard = () => {
   return (
@@ -44,7 +45,7 @@ const Dashboard = () => {
       <div className="actions-notifications">
         <div className="actions">
           <h4 className="section-title">Quick Actions</h4>
-          <button className="action-btn">
+          <Link to="/dashboard/add-a-location" className="btn action-btn">
             <span> Add a New Location</span>
             <svg
               width="16"
@@ -61,7 +62,7 @@ const Dashboard = () => {
                 stroke-linejoin="round"
               />
             </svg>
-          </button>
+          </Link>
           <button className="action-btn">
             <span> Add New Parent (Manual Cash Payments)</span>
             <svg

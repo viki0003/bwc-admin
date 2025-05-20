@@ -169,3 +169,12 @@
   max-width: 56px;
   width:100%;
 }
+
+
+.actions-notifications .actions a.btn.action-btn {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  color: #383838;
+  background: #F1F1F1;
+}

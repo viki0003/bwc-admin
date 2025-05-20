@@ -21,6 +21,8 @@ import Notif from "../Pages/Trainers/Notification";
 import Profile from "../Pages/Trainers/Profile";
 // import Availability from "../Pages/Trainers/Availability";
 
+import TrainerManagement from "../Pages/TrainerManagement/TrainerManagement";
+import ReportsAnalytics from "../Pages/ReportsAnalytics/ReportsAnalytics";
 
 const Routing = () => {
   return (
@@ -54,6 +56,8 @@ const Routing = () => {
         <Route path="/scheduler" element={<Scheduler />} />
         <Route path="/scheduler/view-session" element={<ViewSession />} />
         <Route path="/scheduler/add-session" element={<AddSession />} />
+        <Route path="/trainer-management" element={<TrainerManagement />} />
+        <Route path="/reports-analytics" element={<ReportsAnalytics />} />
       </Route>
       <Route path="/trainers-login" element={<TrainersLogin />} />
       <Route
