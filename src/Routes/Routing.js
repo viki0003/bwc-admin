@@ -14,7 +14,13 @@ import Scheduler from "../Pages/Scheduler/Scheduler";
 import ViewSession from "../Pages/Scheduler/ViewSession/ViewSession";
 import AddSession from "../Pages/Scheduler/AddSession/AddSession";
 import TrainersLogin from "../Pages/Trainers/TrainersLogin/TrainersLogin";
-import TrainersCreateAccount from "../Pages/Trainers/TrainersCreateAccount/TrainersCreateAccount"
+import TrainersCreateAccount from "../Pages/Trainers/TrainersCreateAccount/TrainersCreateAccount";
+import TrainersHome from "../Pages/Trainers/TrainersHome";
+import MySessions from "../Pages/Trainers/MySessions";
+import Notif from "../Pages/Trainers/Notification";
+import Profile from "../Pages/Trainers/Profile";
+// import Availability from "../Pages/Trainers/Availability";
+
 
 const Routing = () => {
   return (
@@ -50,7 +56,16 @@ const Routing = () => {
         <Route path="/scheduler/add-session" element={<AddSession />} />
       </Route>
       <Route path="/trainers-login" element={<TrainersLogin />} />
-      <Route path="/trainers-create-account" element={<TrainersCreateAccount />} />
+      <Route
+        path="/trainers-create-account"
+        element={<TrainersCreateAccount />}
+      />
+      <Route path="/Trainers-Home" element={<TrainersHome />} />
+      <Route path="/MySessions" element={<MySessions />} />
+      <Route path="/Notifications" element={<Notif />} />
+      <Route path="/Profile" element={<Profile />} />
+      {/* <Route path="/Availability" element={<Availability />} /> */}
+
     </Routes>
   );
 };
