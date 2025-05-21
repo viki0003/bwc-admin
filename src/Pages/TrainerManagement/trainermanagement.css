@@ -84,6 +84,7 @@
   margin-top: 25px;
   text-align: center;
   border: 0;
+  border-collapse: collapse;
 }
 
 .trainer-management-table-body table thead tr th {
@@ -93,6 +94,7 @@
   font-size: 16px;
   line-height: 100%;
   color: #535353;
+  padding-bottom: 15px;
 }
 
 .trainer-management-table-body table tbody tr {
@@ -100,6 +102,7 @@
   width: 100%;
   height: 53px;
   border-radius: 10px;
+    border-bottom: 4px solid #fff;
 }
 
 .trainer-management-table-body table tbody tr td {
@@ -108,8 +111,16 @@
 }
 
 .trainer-management-table-body table tbody tr td:first-child {
-  border-radius: 10px;
+  border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
 }
+
+
+.trainer-management-table-body table tbody tr td:last-child {
+  border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
 
 .block-cstm {
     display: flex;
