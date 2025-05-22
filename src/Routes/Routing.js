@@ -20,6 +20,7 @@ import ReportsAnalytics from "../Pages/ReportsAnalytics/ReportsAnalytics";
 import TrainersHome from "../Pages/Trainers/TrainersHome/TrainersHome";
 import MySessions from "../Pages/Trainers/MySessions/MySessions";
 import Notifications from "../Pages/Trainers/Notifications/Notifications";
+import Profile from "../Pages/Trainers/Profile/Profile";
 
 const Routing = () => {
   return (
@@ -58,8 +59,10 @@ const Routing = () => {
         <Route path="/trainers-home" element={<TrainersHome />} />
         <Route path="/my-sessions" element={<MySessions />} />
         <Route path="/notifications" element={<Notifications />} />
+        <Route path="/trainers-profile" element={<Profile />} />
       </Route>
       <Route path="/trainers-login" element={<TrainersLogin />} />
+    
       <Route
         path="/trainers-create-account"
         element={<TrainersCreateAccount />}
