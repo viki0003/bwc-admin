@@ -1,11 +1,10 @@
 import Header from "../../../Components/Header/Header";
 import "./style.css";
-
 export default function SessionDashboard() {
   return (
-    <div className="dashboard-wrapper">
+    <div >
       <Header />
-      <div className="content-layout">
+      <div>
         {/* <Sidebar /> */}
         <div className="primary-content">
           <h2 className="section-title">My Booked Sessions</h2>

@@ -1,16 +1,4 @@
-/* Main Layout */
-.dashboard-container {
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-  }
-  
-  .dashboard-body {
-    display: flex;
-    flex: 1;
-  }
-
-  .profile-section {
+.profile-section {
     flex: 1;
     padding: 30px 40px;
   }
@@ -24,7 +12,7 @@
     display: flex;
     gap: 40px;
   }
-  
+
   .profile-photo {
     position: relative;
   }
@@ -47,7 +35,7 @@
     cursor: pointer;
   }
   
-  /* Input Fields */
+
   .profile-fields {
     flex: 1;
     display: flex;
@@ -94,8 +82,8 @@
     font-size: 13px;
   }
   .profile-img {
-    width: 130px;
-    height: 130px;
+    width: 170px;
+    height: 180px;
     border-radius: 10px;
     object-fit: cover;
   }

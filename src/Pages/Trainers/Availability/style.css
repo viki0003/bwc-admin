@@ -1,104 +1,16 @@
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-  }
-  
-  .header {
-    display: flex;
-    align-items: center;
-    background-color: black;
-    color: white;
-    padding: 10px;
-  }
-  
-  .logo {
-    height: 40px;
-    margin-right: 10px;
-  }
-  
-  .title {
-    font-size: 20px;
-  }
-  
-  .sidebar {
-    width: 200px;
-    background-color: #f0f0f0;
-    height: 100vh;
-    padding-top: 20px;
-    position: fixed;
-  }
-  
-  .sidebar ul {
-    list-style: none;
-    padding: 0;
-  }
-  
-  .sidebar li {
-    padding: 10px 20px;
-    cursor: pointer;
-  }
-  
-  .sidebar li.active {
-    background-color: #ddd;
-    font-weight: bold;
-  }
-  
-  .main-content {
-    margin-left: 220px;
-    padding: 20px;
-  }
-  
-  .availability-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .availability-toggle button {
-    margin-left: 10px;
-    padding: 5px 10px;
-  }
-  
-  .availability-toggle .active {
-    background-color: #007bff;
-    color: white;
-  }
-  
-  .availability-selector table {
-    width: 100%;
-    margin-top: 10px;
-    border-collapse: collapse;
-  }
-  
-  .availability-selector td, .availability-selector th {
-    padding: 8px;
-    border: 1px solid #ccc;
-    vertical-align: top;
-  }
-  
-  .slot-label {
-    display: block;
-    margin-bottom: 5px;
-  }
-  
-  .time-off-form {
-    margin-top: 30px;
-  }
-  
-  .time-off-form label {
-    display: block;
-    margin: 10px 0;
-  }
-  
-  .time-off-button {
-    background-color: black;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    cursor: pointer;
-  }
-  
-  .time-off-button:hover {
-    background-color: #333;
-  }
-  
+.main-layout {
+  display: flex;
+  height: 100%;
+}
+
+.main-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.availability-section {
+  flex: 1;
+  overflow-y: auto;
+}
+

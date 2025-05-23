@@ -17,7 +17,11 @@ import TrainersLogin from "../Pages/Trainers/TrainersLogin/TrainersLogin";
 import TrainersCreateAccount from "../Pages/Trainers/TrainersCreateAccount/TrainersCreateAccount";
 import TrainerManagement from "../Pages/TrainerManagement/TrainerManagement";
 import ReportsAnalytics from "../Pages/ReportsAnalytics/ReportsAnalytics";
-
+import Sessions from "../Pages/Trainers/MySessions";
+import Availability from "../Pages/Trainers/Availability";
+import Notification from "../Pages/Trainers/Notification";
+import Profile from "../Pages/Trainers/Profile";
+import TrainersHome from "../Pages/Trainers/TrainersHome";
 const Routing = () => {
   return (
     <Routes>
@@ -58,6 +62,11 @@ const Routing = () => {
         path="/trainers-create-account"
         element={<TrainersCreateAccount />}
       />
+      <Route path="/mysession" element={<Sessions />} />
+      <Route path="/notification" element={<Notification />} />
+      <Route path="/home" element={<TrainersHome />} />
+      <Route path="/profile" element={<Profile />} />
+      <Route path="/availability" element={<Availability />} />
     </Routes>
   );
 };

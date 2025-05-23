@@ -19,9 +19,9 @@ const ProfileDashboard = () => {
   };
 
   return (
-    <div className="dashboard-container">
+    <div className>
       <Header />
-      <div className="dashboard-body">
+      <div>
         <div className="profile-section">
           <h2>Profile</h2>
           <div className="profile-container">

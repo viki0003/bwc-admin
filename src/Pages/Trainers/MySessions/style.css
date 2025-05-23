@@ -1,18 +1,4 @@
-/* Wrapper for the entire dashboard */
-.dashboard-wrapper {
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-    overflow: hidden;
-  }
-  
-  /* Layout for main content */
-  .content-layout {
-    display: flex;
-    flex: 1;
-    overflow: auto; /* optional: adds scroll if needed */
-  }
-  
+
   /* Primary content area */
   .primary-content {
     flex: 1;
