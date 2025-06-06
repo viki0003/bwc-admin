@@ -1,67 +1,84 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./ParentProfiles.css";
-
-const parents = Array(7).fill({
-  name: "John Smith",
-  email: "john.smith198@gmail.com",
-  phone: "+1 111 111 111",
-  type: "Self Pay",
-  location: "New York",
-});
+import { Link } from "react-router-dom";
+import SearchIcon from "../../../Assets/Icons/SearchIcon";
+import { ParentProfileContext } from "../../../APIContext/ParentProfileContext";
+import Loader from "../../../Components/Loader/Loader";
 
 const ParentProfiles = () => {
+  const { parentProfiles, loading } = useContext(ParentProfileContext);
+
+  if (loading) return <Loader message="Loading Parent Profiles..." />;
+
   return (
-    <>
-      <div className="parent-container parent-header-box">
-        <div className="parent-header">
-          <button className="add-btn">Add New Parent</button>
-        </div>
-      </div>
-      <div className="parent-container">
-        <div className="filter-bar">
-          {/* <input className="search" type="text" placeholder="🔍" /> */}
+    <div className="trainer-management">
+      <Link to="/trainermanagement/add-trainer" className="btn">
+        Add New Parent
+      </Link>
 
-
-          <div className="search-container">
-            <input className="search" type="text" />
-            <svg className="search-icon" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M11 19C15.4183 19 19 15.4183 19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19Z" stroke="#808080" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-              <path d="M21 21L16.65 16.65" stroke="#808080" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-            </svg>
-          </div>
-          <button>Date Range</button>
-          <button>Location</button>
-          <button>Packages</button>
-          <button>Type</button>
-          <button>Other</button>
-        </div>
-
-        <div className="table-wrapper">
-          <div className="table-header parent-table-header">
-            <div>Name</div>
-            <div>Email</div>
-            <div>Phone</div>
-            <div>Type</div>
-            <div>Location</div>
-            <div></div>
-          </div>
-          {parents.map((parent, index) => (
-            <div className="table-row parent-profile-row" key={index}>
-              <div className="name">
-                <b>{parent.name}</b>
-              </div>
-              <div className="email">{parent.email}</div>
-              <div className="phone">{parent.phone}</div>
-              <div className="type">{parent.type}</div>
-              <div className="location">{parent.location}</div>
-              <div>
-                <button className="view-btn">View</button>
-              </div>
+      <div className="trainer-management-table">
+        <h6>Parent Profiles</h6>
+        <div className="trainer-management-table-header">
+          <div className="search-table">
+            <div className="search-container">
+              <input type="search" placeholder="Search..." />
+              <span>
+                <SearchIcon />
+              </span>
             </div>
-          ))}
+            <div className="filterbtn">
+              <input type="date" />
+            </div>
+            <div className="filterbtn">
+              <select>
+                <option value="All">Location</option>
+              </select>
+            </div>
+            <div className="filterbtn">
+              <select>
+                <option value="All">Status</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div className="trainer-management-table-body">
+          <table>
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Type</th>
+                <th>Location</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              {parentProfiles.map((parent) => (
+                <tr key={parent.id}>
+                  <td>
+                    {parent.user?.first_name} {parent.user?.last_name}
+                  </td>
+                  <td>{parent.user?.email}</td>
+                  <td>{parent.phone}</td>
+                  <td>{parent.is_self_pay ? "Self Pay" : ""}</td>
+                  <td>{parent.address}</td>
+                  <td>
+                    <Link
+                      to="/user-management/parent-info"
+                      className="btn black w-full"
+                    >
+                      View
+                    </Link>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

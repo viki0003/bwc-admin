@@ -256,3 +256,10 @@
 }
 
 
+a.btn.black.w-full {
+  width: 100%;
+}
+
+.trainer-management-table-body table tbody tr td {
+  padding: 12px;
+}

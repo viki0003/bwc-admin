@@ -57,9 +57,9 @@ const Dashboard = () => {
               <path
                 d="M1.2617 15.2175L14.6967 1.78249M14.6967 1.78249L14.9619 12.1239M14.6967 1.78249L4.3553 1.51732"
                 stroke="#424242"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               />
             </svg>
           </Link>
@@ -75,9 +75,9 @@ const Dashboard = () => {
               <path
                 d="M1.2617 15.2175L14.6967 1.78249M14.6967 1.78249L14.9619 12.1239M14.6967 1.78249L4.3553 1.51732"
                 stroke="#424242"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               />
             </svg>
           </button>
@@ -93,9 +93,9 @@ const Dashboard = () => {
               <path
                 d="M1.2617 15.2175L14.6967 1.78249M14.6967 1.78249L14.9619 12.1239M14.6967 1.78249L4.3553 1.51732"
                 stroke="#424242"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               />
             </svg>
           </button>

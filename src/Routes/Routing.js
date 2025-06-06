@@ -13,20 +13,15 @@ import CancelSession from "../Pages/Appointments/SessionDetails/CancelSession/Ca
 import Scheduler from "../Pages/Scheduler/Scheduler";
 import ViewSession from "../Pages/Scheduler/ViewSession/ViewSession";
 import AddSession from "../Pages/Scheduler/AddSession/AddSession";
-import TrainersLogin from "../Pages/Trainers/TrainersLogin/TrainersLogin";
-import TrainersCreateAccount from "../Pages/Trainers/TrainersCreateAccount/TrainersCreateAccount";
+import Login from "../Pages/Authentication/Login/AdminLogin";
 import TrainerManagement from "../Pages/TrainerManagement/TrainerManagement";
 import ReportsAnalytics from "../Pages/ReportsAnalytics/ReportsAnalytics";
-import TrainersHome from "../Pages/Trainers/TrainersHome/TrainersHome";
-import MySessions from "../Pages/Trainers/MySessions/MySessions";
-import Notifications from "../Pages/Trainers/Notifications/Notifications";
-import Profile from "../Pages/Trainers/Profile/Profile";
-
+import OTPVerify from "../Pages/Authentication/OTP/OTPVerify";
 const Routing = () => {
   return (
     <Routes>
       <Route element={<Layout />}>
-        <Route path="/" element={<DashboardPage />} />
+        <Route path="/dashboard" element={<DashboardPage />} />
         <Route path="/dashboard/add-a-location" element={<AddLocation />} />
         <Route
           path="/user-management/parent-profile"
@@ -56,17 +51,9 @@ const Routing = () => {
         <Route path="/scheduler/add-session" element={<AddSession />} />
         <Route path="/trainer-management" element={<TrainerManagement />} />
         <Route path="/reports-analytics" element={<ReportsAnalytics />} />
-        <Route path="/trainers-home" element={<TrainersHome />} />
-        <Route path="/my-sessions" element={<MySessions />} />
-        <Route path="/notifications" element={<Notifications />} />
-        <Route path="/trainers-profile" element={<Profile />} />
       </Route>
-      <Route path="/trainers-login" element={<TrainersLogin />} />
-    
-      <Route
-        path="/trainers-create-account"
-        element={<TrainersCreateAccount />}
-      />
+      <Route path="/" element={<Login />} />
+      <Route path="/otp-verify" element={<OTPVerify />} />
     </Routes>
   );
 };

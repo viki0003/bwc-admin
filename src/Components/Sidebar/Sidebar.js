@@ -33,17 +33,17 @@ const Sidebar = () => {
         <div className="dropdown">
           <div
             className={`sidebar-subitem ${
-              isSubActive("/user-management/parent-info") ? "active" : ""
+              isSubActive("/user-management/parent-profile") ? "active" : ""
             }`}
           >
-            <Link to="/user-management/parent-info">Parent Info</Link>
+            <Link to="/user-management/parent-profile">Parent Profiles</Link>
           </div>
           <div
             className={`sidebar-subitem ${
-              isSubActive("/user-management/player-info") ? "active" : ""
+              isSubActive("/user-management/player-profile") ? "active" : ""
             }`}
           >
-            <Link to="/user-management/player-info">Player Info</Link>
+            <Link to="/user-management/player-profile">Player Profiles</Link>
           </div>
         </div>
       )}

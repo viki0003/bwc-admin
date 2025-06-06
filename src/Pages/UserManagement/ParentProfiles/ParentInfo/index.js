@@ -1,5 +1,7 @@
+
 import "./parentinfo.css"
 const ParentInfo = () => {
+  
   return (
     <div className="parent-info">
       <div className="parent-info-header">

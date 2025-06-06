@@ -14,26 +14,26 @@ const Header = () => {
           <span>Admin</span>
         </div>
         <div className="hamburger-btn">
-          <label class="switch" onClick={() => setVisibleLeft(true)}>
+          <label className="switch" onClick={() => setVisibleLeft(true)}>
             <input type="checkbox" />
-            <span class="wrapper">
-              <span class="row">
-                <span class="dot"></span>
-                <span class="dot"></span>
+            <span className="wrapper">
+              <span className="row">
+                <span className="dot"></span>
+                <span className="dot"></span>
               </span>
-              <span class="row row-bottom">
-                <span class="dot"></span>
-                <span class="dot"></span>
+              <span className="row row-bottom">
+                <span className="dot"></span>
+                <span className="dot"></span>
               </span>
-              <span class="row-vertical">
-                <span class="dot"></span>
-                <span class="dot middle-dot"></span>
-                <span class="dot"></span>
+              <span className="row-vertical">
+                <span className="dot"></span>
+                <span className="dot middle-dot"></span>
+                <span className="dot"></span>
               </span>
-              <span class="row-horizontal">
-                <span class="dot"></span>
-                <span class="dot middle-dot-horizontal"></span>
-                <span class="dot"></span>
+              <span className="row-horizontal">
+                <span className="dot"></span>
+                <span className="dot middle-dot-horizontal"></span>
+                <span className="dot"></span>
               </span>
             </span>
           </label>
