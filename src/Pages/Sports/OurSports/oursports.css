@@ -1,0 +1,107 @@
+.switch.toggle-switch {
+    font-size: 17px;
+    position: relative;
+    display: inline-block;
+    width: 3.5em;
+    height: 2em;
+  }
+  .switch.toggle-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  .toggle-switch .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #fff;
+    border: 1px solid #adb5bd;
+    transition: .4s;
+    border-radius: 30px;
+  }
+  
+  .toggle-switch .slider:before {
+    position: absolute;
+    content: "";
+    height: 1.4em;
+    width: 1.4em;
+    border-radius: 20px;
+    left: 0.27em;
+    bottom: 0.25em;
+    background-color: #adb5bd;
+    transition: .4s;
+  }
+  
+  .toggle-switch input:checked + .toggle-switch .slider {
+    background-color: #007bff;
+    border: 1px solid #007bff;
+  }
+  
+  .toggle-switch input:focus + .toggle-switch .slider {
+    box-shadow: 0 0 1px #007bff;
+  }
+  
+  .toggle-switch input:checked + .toggle-switch .slider:before {
+    transform: translateX(1.4em);
+    background-color: #fff;
+  }
+
+  .our-sports-container {
+    box-shadow: 0px 0px 4px 0px #00000040;
+    background: #fff;
+    border-radius: 10px;
+    padding: 25px;
+}
+
+.our-sports-container h2 {
+    font-family: Inter;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 100%;
+    margin-bottom: 30px;
+}
+
+table.our-sports-table {
+    width: 100%;
+    text-align: center;
+    border-collapse: collapse;
+}
+
+table.our-sports-table tbody tr td {
+    font-family: Inter;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 100%;
+    text-align: center;
+    color: #000;
+    padding: 15px 0px;
+}
+
+table.our-sports-table thead tr th {
+    font-family: Inter;
+    font-weight: 600;
+    font-style: italic;
+    font-size: 16px;
+    line-height: 100%;
+    color: #535353;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #000;
+    max-width: 33%;
+    width: 100%;
+}
+
+button.mt-event {
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+}
+
+.toggle-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}

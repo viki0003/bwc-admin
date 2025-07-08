@@ -1,0 +1,94 @@
+.create-event-item h2 {
+    font-family: Inter;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 100%;
+    margin-bottom: 20px;
+}
+
+.create-event-item form {
+    display: flex;
+    align-items: flex-end;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+}
+
+.create-event-item form .form-item {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    width: calc(20% - 20px);
+}
+
+.create-event-item form .form-item label {
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 100%;
+    color: #3D3D3D;
+}
+
+.create-event-item form .form-item input,
+form.map-form .form-item textarea {background: #EFEFEF;border: 0px;border-radius: 6px;height: 36px;padding: 5px;}
+
+.create-event-item form .form-item select {
+    background: #EFEFEF;
+    border: 0px;
+    height: 36px;
+    border-radius: 6px;
+    padding: 5px;
+}
+
+.create-event-item form .form-item button.btn.black {
+    height: 36px;
+    font-size: 12px;
+    display: flex
+;
+    justify-content: center;
+    gap: 12px;
+    border-radius: 6px;
+    background: #252525;
+    align-items: center;
+    width: 100%;
+}
+
+.create-event-item form .form-item button.btn.black:hover {
+    background: #000;
+}
+
+form.map-form {
+    align-items: baseline;
+}
+
+form.map-form .form-item {
+    width: calc(33% - 16px);
+}
+
+form.map-form .form-item textarea, form.map-form .form-item input {
+    height: 70px;
+}
+
+form.map-form textarea {
+    height: 50px;
+}
+
+.create-event-page .from-btns {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.create-event-page .from-btns button.btn {
+    max-width: 348px;
+    width: 100%;
+}
+
+.create-event-page hr {
+    opacity: 1;
+    border-width: 1px;
+    border-style: solid;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    display: block;
+}

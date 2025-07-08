@@ -1,0 +1,44 @@
+table.manage-event-table {
+    width: 100%;
+    text-align: center;
+    border-collapse: collapse;
+}
+
+table.manage-event-table thead tr th {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 100%;
+    color: #535353;
+    border-bottom: 1px solid #000000;
+    padding-bottom: 8px;
+    max-width: 16.6%;
+    width: 100%;
+}
+
+table.manage-event-table tbody tr td {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 100%;
+    text-align: center;
+    padding: 20px 0px;
+}
+
+table.manage-event-table tbody tr td button.mt-event {
+    background: transparent;
+    border: 0px;
+    cursor: pointer;
+}
+
+
+.manage-event-footer {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    justify-content: center;
+    padding-top: 60px;
+}
+
+.manage-event-footer .btn {
+    max-width: 348px;
+    width: 100%;
+}

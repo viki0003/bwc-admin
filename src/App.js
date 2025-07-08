@@ -1,19 +1,18 @@
-import React from "react";
 import Routing from "./Routes/Routing";
 import "primereact/resources/themes/lara-light-cyan/theme.css";
-import { LoginProvider } from "./APIContext/LoginContext";
-import { ParentProfileProvider } from "./APIContext/ParentProfileContext";
+import { ParentProvider } from "./APIContext/ParentContext";
+import { PlayerAccountProvider } from "./APIContext/PlayerAccountContext";
 import "./App.css";
+import { useLogin } from "./APIContext/LoginContext";
 
 function App() {
+  const { user } = useLogin();
   return (
-    <div className="app">
-      <LoginProvider>
-        <ParentProfileProvider>
-          <Routing />
-        </ParentProfileProvider>
-      </LoginProvider>
-    </div>
+    <ParentProvider user={user}>
+      <PlayerAccountProvider>
+        <Routing />
+      </PlayerAccountProvider>
+    </ParentProvider>
   );
 }
 

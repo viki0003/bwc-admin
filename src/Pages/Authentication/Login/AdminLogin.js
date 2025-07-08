@@ -1,67 +1,70 @@
-import React, { useRef, useState, useContext, useEffect } from "react";
+import React, { useRef, useState } from "react";
 import "./login.css";
 import { Link, useNavigate } from "react-router-dom";
 import Header from "../../../Components/Header/Header";
-import axios from "axios";
 import { Toast } from "primereact/toast";
-import { LoginContext } from "../../../APIContext/LoginContext";
+import { useLogin } from "../../../APIContext/LoginContext";
 
 const AdminLogin = () => {
+  const { login, error, loading } = useLogin();
+  const [identifier, setIdentifier] = useState("");
+  const [password, setPassword] = useState("");
+  const [formError, setFormError] = useState("");
   const toast = useRef(null);
   const navigate = useNavigate();
-  const { isLoggedIn, login } = useContext(LoginContext);
 
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-
-  useEffect(() => {
-    if (isLoggedIn) {
-      navigate("/dashboard");
+  const validateForm = () => {
+    if (!identifier.trim()) {
+      setFormError("Please enter email or username.");
+      return false;
     }
-  }, [isLoggedIn, navigate]);
+
+    if (!password.trim()) {
+      setFormError("Please enter your password.");
+      return false;
+    }
+
+    setFormError("");
+    return true;
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (!email.trim() || !password.trim()) {
+    if (!validateForm()) {
       toast.current.show({
         severity: "warn",
         summary: "Validation Error",
-        detail: "Email and Password are required",
+        detail: formError,
         life: 3000,
       });
       return;
     }
 
-    try {
-      const response = await axios.post("http://54.185.32.148/api/customer/login/", {
-        email,
-        password,
-      });
+    const payload = {
+      username_or_email: identifier,
+      password,
+    };
 
-      login(response.data);
+    const result = await login(payload);
 
+    if (result?.success) {
       toast.current.show({
         severity: "success",
         summary: "Login Successful",
-        detail: "Welcome back, Admin!",
+        detail: "Welcome back!",
         life: 3000,
       });
-
-      setTimeout(() => {
-        navigate("/dashboard");
-      }, 1000);
-    } catch (error) {
+      navigate("/dashboard");
+    } else {
       toast.current.show({
         severity: "error",
         summary: "Login Failed",
-        detail:
-          error.response?.data?.message || "Invalid credentials or server error",
+        detail: error || "Invalid credentials or server error",
         life: 4000,
       });
     }
   };
-
   return (
     <>
       <Toast ref={toast} />
@@ -72,15 +75,19 @@ const AdminLogin = () => {
           <form onSubmit={handleSubmit}>
             <div className="form-item">
               <input
-                type="email"
-                placeholder="Email Address"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
+                type="text"
+                id="identifier"
+                name="identifier"
+                placeholder="Email ID or Username"
+                value={identifier}
+                onChange={(e) => setIdentifier(e.target.value)}
               />
             </div>
             <div className="form-item">
               <input
                 type="password"
+                id="password"
+                name="password"
                 placeholder="Password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
@@ -91,9 +98,10 @@ const AdminLogin = () => {
                 Forgot Password?
               </Link>
             </div>
-            <button type="submit" className="btn gold">
-              Login
+            <button type="submit" disabled={loading} className="btn gold">
+              {loading ? "Signing In..." : "Sign In"}
             </button>
+            {error && !formError && <p className="error-message">{error}</p>}
           </form>
         </div>
       </div>
