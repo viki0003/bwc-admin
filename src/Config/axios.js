@@ -52,8 +52,8 @@ axiosInstance.interceptors.response.use(
       return axiosInstance(originalRequest);
     } catch (refreshError) {
       localStorage.clear();
-      if (!window.location.pathname.includes("/login")) {
-        window.location.href = "/login";
+      if (!window.location.pathname.includes("/")) {
+        window.location.href = "/";
       }
       return Promise.reject(refreshError);
     }

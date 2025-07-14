@@ -1,83 +1,116 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./PlayerProfiles.css";
-
-const parents = Array(7).fill({
-  name: "John Smith",
-  parent_name: "James Smith",
-  package: "1-on-1",
-  sessions_left: "2",
-  sports: "Basketball",
-});
+import { Link } from "react-router-dom";
+import SearchIcon from "../../../Assets/Icons/SearchIcon";
+import { usePlayerAccount } from "../../../APIContext/PlayerAccountContext";
+import Loader from "../../../Components/Loader/Loader";
 
 const PlayerProfiles = () => {
+  const { players, fetchPlayers } = usePlayerAccount();
+  const [filteredPlayers, setFilteredPlayers] = useState([]);
+
+  useEffect(() => {
+    fetchPlayers();
+  }, [fetchPlayers]);
+
+  useEffect(() => {
+    setFilteredPlayers(players);
+  }, [players]);
+
+  const handleSearch = (e) => {
+    const query = e.target.value.toLowerCase();
+    const result = players.filter((player) => {
+      const playerName = player.name?.toLowerCase() || "";
+      const parentName = `${player.parent_details?.user?.first_name ?? ""} ${
+        player.parent_details?.user?.last_name ?? ""
+      }`.toLowerCase();
+      return playerName.includes(query) || parentName.includes(query);
+    });
+    setFilteredPlayers(result);
+  };
+
+  if (!players.length) return <Loader message="Loading Player Profiles..." />;
+
   return (
-    <>
-      <div className="parent-container parent-player-header">
-        <div className="parent-header">
-          <span className="parent-breadcrumb">
-            User Management &gt; <b>Player Profiles</b>
-          </span>
-          <button className="add-btn">Add New Player</button>
-        </div>
-      </div>
-
-      <div className="parent-container">
-        <div className="filter-bar">
-          <div className="search-container">
-            <input className="search" type="text" />
-            <svg
-              className="search-icon"
-              viewBox="0 0 24 24"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M11 19C15.4183 19 19 15.4183 19 11C19 6.58172 15.4183 3 11 3C6.58172 3 3 6.58172 3 11C3 15.4183 6.58172 19 11 19Z"
-                stroke="#808080"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
+    <div className="trainer-management">
+      <div className="trainer-management-table">
+        <h6>Player Profiles</h6>
+        <div className="trainer-management-table-header">
+          <div className="search-table">
+            <div className="search-container">
+              <input
+                type="search"
+                placeholder="Search..."
+                onChange={handleSearch}
               />
-              <path
-                d="M21 21L16.65 16.65"
-                stroke="#808080"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
-          </div>
-          <button>Date Range</button>
-          <button>Age</button>
-          <button>Player Tags</button>
-          <button>Subscription</button>
-          <button>Sports</button>
-        </div>
-
-        <div className="table-wrapper">
-          <div className="table-header player-header">
-            <div>Name</div>
-            <div>Parent Name</div>
-            <div>Package</div>
-            <div>Session Left</div>
-            <div>Sport</div>
-            <div></div>
-          </div>
-          {parents.map((parent, index) => (
-            <div className="table-row player-profile-row" key={index}>
-              <div className="name">
-                <b>{parent.name}</b>
-              </div>
-              <div className="email">{parent.parent_name}</div>
-              <div className="phone">{parent.package}</div>
-              <div className="type">{parent.sessions_left}</div>
-              <div className="location">{parent.sports}</div>
-              {/* <div><button className="view-btn">View</button></div> */}
+              <span>
+                <SearchIcon />
+              </span>
             </div>
-          ))}
+            <div className="filterbtn">
+              <input type="date" />
+            </div>
+            <div className="filterbtn">
+              <select>
+                <option value="All">Location</option>
+              </select>
+            </div>
+            <div className="filterbtn">
+              <select>
+                <option value="All">Status</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div className="trainer-management-table-body">
+          <table>
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Parent Name</th>
+                <th>Package</th>
+                <th>Session Left</th>
+                <th>Sport</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              {filteredPlayers.length > 0 ? (
+                filteredPlayers.map((player) => (
+                  <tr key={player.id}>
+                    <td>{player.name}</td>
+                    <td>
+                      {player.parent_details?.user?.first_name}{" "}
+                      {player.parent_details?.user?.last_name}
+                    </td>
+                    <td>{player.package_name || "N/A"}</td>
+                    <td>{player.session_left || 0}</td>
+                    <td>{player.sport || "N/A"}</td>
+                    <td>
+                      <Link
+                        to={`/user-management/player-info/${player.name
+                          ?.toLowerCase()
+                          .replace(/\s+/g, "-")}`}
+                        className="btn black w-full"
+                      >
+                        View
+                      </Link>
+                    </td>
+                  </tr>
+                ))
+              ) : (
+                <tr>
+                  <td colSpan="6" style={{ textAlign: "center" }}>
+                    No player profiles found.
+                  </td>
+                </tr>
+              )}
+            </tbody>
+          </table>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

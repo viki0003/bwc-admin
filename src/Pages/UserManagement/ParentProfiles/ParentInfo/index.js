@@ -1,55 +1,78 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { useParams, Link } from "react-router-dom";
-import axiosInstance from "../../../../Config/axios";
+import { ParentContext } from "../../../../APIContext/ParentContext";
+import { usePlayerAccount } from "../../../../APIContext/PlayerAccountContext";
 import Loader from "../../../../Components/Loader/Loader";
+import { MEDIA_BASE_URL } from "../../../../Config/Config";
 import "./parentinfo.css";
 
 const ParentInfo = () => {
-  const { id } = useParams();
+  const { slug } = useParams();
+  const { parentProfiles, loading: parentLoading } = useContext(ParentContext);
+  const { players, fetchPlayers } = usePlayerAccount();
   const [parent, setParent] = useState(null);
-  const [loading, setLoading] = useState(true);
+  const [associatedPlayers, setAssociatedPlayers] = useState([]);
 
-  const fetchParentDetails = async () => {
-    try {
-      const token = localStorage.getItem("accessToken");
+  // Normalize slug: "vikram-pawar" -> "vikram pawar"
+  const normalizedSlug = slug?.toLowerCase().replace(/-/g, " ");
 
-      const response = await axiosInstance.get(`/customer/parent-account?id=${id}`, {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
+  // Find parent from context using slug
+  useEffect(() => {
+    if (parentProfiles.length > 0 && normalizedSlug) {
+      const matchedParent = parentProfiles.find((p) => {
+        const fullName = `${p.user?.first_name ?? ""} ${
+          p.user?.last_name ?? ""
+        }`.toLowerCase();
+        return fullName === normalizedSlug;
       });
 
-      setParent(response.data);
-    } catch (error) {
-      console.error("Failed to fetch parent info:", error);
-    } finally {
-      setLoading(false);
+      setParent(matchedParent || null);
     }
-  };
+  }, [parentProfiles, normalizedSlug]);
 
+  // Fetch players
   useEffect(() => {
-    fetchParentDetails();
-  }, [id]);
+    fetchPlayers();
+  }, [fetchPlayers]);
 
-  if (loading) return <Loader message="Loading Parent Info..." />;
+  // Match players to this parent
+  useEffect(() => {
+    if (players.length > 0 && parent?.id) {
+      const matched = players.filter(
+        (player) => player.parent_details?.id === parent.id
+      );
+      setAssociatedPlayers(matched);
+    }
+  }, [players, parent]);
 
-  const user = parent?.user || {};
-  const players = parent?.players || []; // assuming API gives `players` key
+  if (parentLoading || !parent)
+    return <Loader message="Loading Parent Info..." />;
+
+  const user = parent.user || {};
 
   return (
     <div className="parent-info">
       <div className="parent-info-header">
         <div className="pih-item">
-          <p><strong>Parent Name:</strong> {user.first_name} {user.last_name}</p>
+          <p>
+            <strong>Parent Name:</strong> {user.first_name} {user.last_name}
+          </p>
         </div>
         <div className="pih-item">
-          <p><strong>Phone:</strong> {parent?.phone || "N/A"}</p>
+          <p>
+            <strong>Phone:</strong> {parent.phone}
+          </p>
         </div>
         <div className="pih-item">
-          <p><strong>Email Id:</strong> {user.email || "N/A"}</p>
+          <p>
+            <strong>Email Id:</strong> {user.email}
+          </p>
         </div>
         <div className="pih-item">
-          <p><strong>Payment Mode:</strong> {parent?.is_self_pay ? "Self Pay" : "Corporate"}</p>
+          <p>
+            <strong>Payment Mode:</strong>{" "}
+            {parent.is_self_pay ? "Self Pay" : "Corporate"}
+          </p>
         </div>
       </div>
 
@@ -58,30 +81,47 @@ const ParentInfo = () => {
       <div className="associated-players">
         <h3>Associated Players:</h3>
         <div className="ap-list">
-          {players.length > 0 ? (
-            players.map((player) => (
+          {associatedPlayers.length > 0 ? (
+            associatedPlayers.map((player) => (
               <div className="ap-item" key={player.id}>
                 <div className="api-img">
                   <img
-                    src={player.profile_picture || "/placeholder.jpg"}
+                    src={
+                      player.profile_picture
+                        ? `${MEDIA_BASE_URL}${player.profile_picture}`
+                        : "/placeholder.jpg"
+                    }
                     alt={player.name}
                   />
                 </div>
                 <div className="api-content">
-                  <p><strong>Name:</strong> {player.name}</p>
+                  <p>
+                    <strong>Name:</strong> {player.name}
+                  </p>
                   <div className="api-ga">
-                    <p><strong>Age:</strong> {player.age}</p>
-                    <p><strong>Grade:</strong> {player.grade}</p>
+                    <p>
+                      <strong>Age:</strong> {player.age}
+                    </p>
+                    <p>
+                      <strong>Grade:</strong> {player.grade}
+                    </p>
                   </div>
-                  <p><strong>Packages:</strong> {player.package_name || "N/A"}</p>
-                  <Link to={`/user-management/player-info/${player.id}`}>
-                    <button>View Player Profile</button>
+                  <p>
+                    <strong>School:</strong> {player.school_name || "N/A"}
+                  </p>
+                  <Link
+                    to={`/user-management/player-info/${player.name
+                      ?.toLowerCase()
+                      .replace(/\s+/g, "-")}`}
+                    className="btn black w-full"
+                  >
+                    View Player Profile
                   </Link>
                 </div>
               </div>
             ))
           ) : (
-            <p>No players associated.</p>
+            <p>No associated players found for this parent.</p>
           )}
         </div>
       </div>

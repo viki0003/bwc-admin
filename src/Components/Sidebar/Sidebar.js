@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
+import { useLogout } from "../../APIContext/UseLogout";
 import "./Sidebar.css";
 
 const Sidebar = () => {
   const location = useLocation();
+  const logout = useLogout();
   const [userMgmtOpen, setUserMgmtOpen] = useState(false);
 
   // Matches active routes including nested ones
@@ -71,6 +73,9 @@ const Sidebar = () => {
       {/* Reports & Analytics */}
       <div className={`sidebar-item ${isActive("/reports-analytics") ? "active" : ""}`}>
         <Link to="/reports-analytics">Reports & Analytics</Link>
+      </div>
+      <div className="sidebar-item" onClick={logout}>
+        <span>Log Out</span>
       </div>
     </div>
   );

@@ -22,6 +22,7 @@ import ViewEvent from "../Pages/Calendar/ViewEvent";
 import ManageEvent from "../Pages/Calendar/ManageEvent";
 import CreateNewEventTemplate from "../Pages/Calendar/CreateNewEventTemplate";
 import OurSports from "../Pages/Sports/OurSports";
+import AddNewSport from "../Pages/Sports/AddNewSport";
 const Routing = () => {
   return (
     <Routes>
@@ -49,8 +50,8 @@ const Routing = () => {
           path="/appointments/cancel-session"
           element={<CancelSession />}
         />
-        <Route path="/user-management/parent-info/:id" element={<ParentInfo />} />
-        <Route path="/user-management/player-info" element={<PlayerInfo />} />
+        <Route path="/user-management/parent-info/:slug" element={<ParentInfo />} />
+        <Route path="/user-management/player-info/:slug" element={<PlayerInfo />} />
         <Route path="/scheduler" element={<Scheduler />} />
         <Route path="/scheduler/view-session" element={<ViewSession />} />
         <Route path="/scheduler/add-session" element={<AddSession />} />
@@ -62,6 +63,7 @@ const Routing = () => {
         <Route path="/calendar/manage-event" element={<ManageEvent />} />
         <Route path="/calendar/manage-event/create-new-event-template" element={<CreateNewEventTemplate />} />
         <Route path="/our-sports" element={<OurSports />} />
+        <Route path="/our-sports/add-new-sports" element={<AddNewSport />} />
       </Route>
       <Route path="/" element={<Login />} />
       <Route path="/otp-verify" element={<OTPVerify />} />

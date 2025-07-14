@@ -21,6 +21,7 @@
 .associated-players .ap-list {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    gap: 20px;
 }
 
 .associated-players .ap-list .ap-item {
@@ -30,10 +31,11 @@
 }
 
 .ap-list .ap-item .api-img {
-    width: 170px;
+    max-width: 170px;
     height: 213px;
     border-radius: 8px;
     background: #D9D9D9;
+    width: 100%;
 }
 
 .ap-list .ap-item .api-content {
@@ -63,4 +65,12 @@
     font-size: 18px;
     line-height: 100%;
     color: #000;
+}
+
+.associated-players .ap-list .ap-item .api-img img,
+.associated-parents .ap-list .ap-item .api-img img{
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    object-fit: cover;
 }

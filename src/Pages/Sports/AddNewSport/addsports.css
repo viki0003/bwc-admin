@@ -1,0 +1,61 @@
+
+form.add-sport-form .form-group {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+form.add-sport-form .form-group .sport-img {
+    max-width: 226px;
+    width: 100%;
+    max-height: 237px;
+    height: 100%;
+}
+
+form.add-sport-form .form-group .sport-img img {
+    height: 237px;
+    background: #D9D9D9;
+    width: 100%;
+    display: block;
+    border-radius: 15px;
+}
+
+form.add-sport-form .form-group .form-fields-details {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+form.add-sport-form .form-group .form-fields-details .ff-fields {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+form.add-sport-form .form-group .form-fields-details .ff-fields .ff-item {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+form.add-sport-form .form-group .form-fields-details .ff-fields .ff-item label {
+    font-family: Inter;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 100%;
+    color: #3D3D3D;
+}
+
+form.add-sport-form .form-group .form-fields-details .ff-fields .ff-item input {
+    height: 36px;
+    background: #EFEFEF;
+    border: 0px;
+    border-radius: 6px;
+    padding: 10px;
+}
+
+.form-fields-details .ff-btns {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
