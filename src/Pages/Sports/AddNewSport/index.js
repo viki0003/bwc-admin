@@ -1,6 +1,6 @@
 import React, { useState, useRef } from "react";
 import { useSports } from "../../../APIContext/SportsContext";
-import SportsImg from "../../../Assets/Images/BasketBall3.png"
+import SportsImg from "../../../Assets/Images/BasketBall3.png";
 import "./addsports.css";
 
 const AddNewSport = () => {
@@ -12,6 +12,7 @@ const AddNewSport = () => {
   });
 
   const [preview, setPreview] = useState(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const fileInputRef = useRef(null);
 
   const handleChange = (e) => {
@@ -33,6 +34,7 @@ const AddNewSport = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setIsSubmitting(true);
 
     const data = new FormData();
     data.append("name", formData.name);
@@ -43,6 +45,7 @@ const AddNewSport = () => {
     }
 
     await createSport(data);
+    setIsSubmitting(false);
 
     setFormData({ name: "", description: "", image: null });
     setPreview(null);
@@ -54,17 +57,14 @@ const AddNewSport = () => {
       <form className="add-sport-form" onSubmit={handleSubmit} encType="multipart/form-data">
         <div className="form-group">
           <div className="sport-img" onClick={handleImageClick} style={{ cursor: "pointer" }}>
-            <img
-              src={preview || SportsImg}
-              alt="Sport"
-            />
+            <img src={preview || SportsImg} alt="Sport" />
             <input
               type="file"
               name="image"
               accept="image/*"
               onChange={handleImageChange}
               ref={fileInputRef}
-              style={{ display: "none" }} 
+              style={{ display: "none" }}
             />
           </div>
 
@@ -93,7 +93,9 @@ const AddNewSport = () => {
             </div>
 
             <div className="ff-btns">
-              <button type="submit" className="btn gold">Save Sport</button>
+              <button type="submit" className="btn gold" disabled={isSubmitting}>
+                {isSubmitting ? "Saving..." : "Save Sport"}
+              </button>
               <button
                 type="button"
                 className="btn grey"
