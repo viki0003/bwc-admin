@@ -1,8 +1,11 @@
 import React from "react";
-import "./oursports.css";
+import { useSports } from "../../../APIContext/SportsContext";
 import TrashIcon from "../../../Assets/Icons/TrashIcon";
+import "./oursports.css";
 
 const OurSports = () => {
+  const { sports, deleteSport, toggleSportActive } = useSports();
+
   return (
     <div className="our-sports-container">
       <h2>Sports Table View</h2>
@@ -15,116 +18,33 @@ const OurSports = () => {
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>Basketball</td>
-            <td>
-              <div className="toggle-container">
-                <label className="switch toggle-switch">
-                  <input type="checkbox" />
-                  <span className="slider"></span>
-                </label>
-                Active
-              </div>
-            </td>
-            <td>
-              <button className="mt-event">
-                <TrashIcon />
-              </button>
-            </td>
-          </tr>
-
-          <tr>
-            <td>Soccer</td>
-            <td>
-              <div className="toggle-container">
-                <label className="switch toggle-switch">
-                  <input type="checkbox" />
-                  <span className="slider"></span>
-                </label>
-                Active
-              </div>
-            </td>
-            <td>
-              <button className="mt-event">
-                <TrashIcon />
-              </button>
-            </td>
-          </tr>
-
-          <tr>
-            <td>Track & Field</td>
-            <td>
-              <div className="toggle-container">
-                <label className="switch toggle-switch">
-                  <input type="checkbox" />
-                  <span className="slider"></span>
-                </label>
-                Active
-              </div>
-            </td>
-            <td>
-              <button className="mt-event">
-                <TrashIcon />
-              </button>
-            </td>
-          </tr>
-
-          <tr>
-            <td>Baseball</td>
-            <td>
-              <div className="toggle-container">
-                <label className="switch toggle-switch">
-                  <input type="checkbox" />
-                  <span className="slider"></span>
-                </label>
-                Active
-              </div>
-            </td>
-            <td>
-              <button className="mt-event">
-                <TrashIcon />
-              </button>
-            </td>
-          </tr>
-
-          <tr>
-            <td>Bowling</td>
-            <td>
-              <div className="toggle-container">
-                <label className="switch toggle-switch">
-                  <input type="checkbox" />
-                  <span className="slider"></span>
-                </label>
-                Active
-              </div>
-            </td>
-            <td>
-              <button className="mt-event">
-                <TrashIcon />
-              </button>
-            </td>
-          </tr>
-
-          <tr>
-            <td>Golf</td>
-            <td>
-              <div className="toggle-container">
-                <label className="switch toggle-switch">
-                  <input type="checkbox" />
-                  <span className="slider"></span>
-                </label>
-                Active
-              </div>
-            </td>
-            <td>
-              <button className="mt-event">
-                <TrashIcon />
-              </button>
-            </td>
-          </tr>
+          {sports.map((sport) => (
+            <tr key={sport.id}>
+              <td>{sport.name}</td>
+              <td>
+                <div className="toggle-container">
+                  <label className="switch toggle-switch">
+                    <input
+                      type="checkbox"
+                      checked={sport.is_active}
+                      onChange={() => toggleSportActive(sport.id, !sport.is_active)}
+                    />
+                    <span className="slider"></span>
+                  </label>
+                  {sport.is_active ? "Active" : "Inactive"}
+                </div>
+              </td>
+              <td>
+                <button className="mt-event" onClick={() => deleteSport(sport.id)}>
+                  <TrashIcon />
+                </button>
+              </td>
+            </tr>
+          ))}
         </tbody>
       </table>
     </div>
   );
 };
+
 export default OurSports;
