@@ -18,12 +18,13 @@ form.add-sport-form .form-group .sport-img img {
     width: 100%;
     display: block;
     border-radius: 15px;
+    object-fit: cover;
 }
 
 form.add-sport-form .form-group .form-fields-details {
     display: flex;
     flex-direction: column;
-    gap: 50px;
+    gap: 23px;
 }
 
 form.add-sport-form .form-group .form-fields-details .ff-fields {
@@ -58,4 +59,22 @@ form.add-sport-form .form-group .form-fields-details .ff-fields .ff-item input {
     display: flex;
     align-items: center;
     gap: 20px;
+}
+
+.st-radios {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    margin-top: 3px;
+}
+
+.st-radios .st-radios-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.p-radiobutton.p-highlight .p-radiobutton-box {
+    border-color: #c7822d;
+    background: #c7822d;
 }

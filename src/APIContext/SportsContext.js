@@ -85,6 +85,7 @@ export const SportsProvider = ({ children }) => {
         createSport,
         deleteSport,
         toggleSportActive,
+        toastRef
       }}
     >
       <Toast ref={toastRef} />

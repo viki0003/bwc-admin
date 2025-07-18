@@ -14,6 +14,7 @@ const OurSports = () => {
           <tr>
             <th>Sport Name</th>
             <th>Active?</th>
+            <th>Sports Type</th>
             <th>Actions</th>
           </tr>
         </thead>
@@ -34,6 +35,7 @@ const OurSports = () => {
                   {sport.is_active ? "Active" : "Inactive"}
                 </div>
               </td>
+              <td>{sport.sport_type}</td>
               <td>
                 <button className="mt-event" onClick={() => deleteSport(sport.id)}>
                   <TrashIcon />
