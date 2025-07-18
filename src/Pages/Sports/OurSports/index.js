@@ -1,10 +1,25 @@
-import React from "react";
+import React, { useState } from "react";
 import { useSports } from "../../../APIContext/SportsContext";
 import TrashIcon from "../../../Assets/Icons/TrashIcon";
+import EditSportModal from "./EditSportModal";
+import { Dialog } from "primereact/dialog";
 import "./oursports.css";
+import { FaPen } from "react-icons/fa";
 
 const OurSports = () => {
   const { sports, deleteSport, toggleSportActive } = useSports();
+  const [selectedSport, setSelectedSport] = useState(null);
+  const [visible, setVisible] = useState(false);
+
+  const handleEditClick = (sport) => {
+    setSelectedSport(sport);
+    setVisible(true);
+  };
+
+  const handleCloseModal = () => {
+    setVisible(false);
+    setSelectedSport(null);
+  };
 
   return (
     <div className="our-sports-container">
@@ -28,7 +43,9 @@ const OurSports = () => {
                     <input
                       type="checkbox"
                       checked={sport.is_active}
-                      onChange={() => toggleSportActive(sport.id, !sport.is_active)}
+                      onChange={() =>
+                        toggleSportActive(sport.id, !sport.is_active)
+                      }
                     />
                     <span className="slider"></span>
                   </label>
@@ -37,14 +54,36 @@ const OurSports = () => {
               </td>
               <td>{sport.sport_type}</td>
               <td>
-                <button className="mt-event" onClick={() => deleteSport(sport.id)}>
-                  <TrashIcon />
-                </button>
+                <div className="sports-action-btns">
+                  <button
+                    className="mt-event"
+                    onClick={() => handleEditClick(sport)}
+                  >
+                    <FaPen />
+                  </button>
+                  <button
+                    className="mt-event"
+                    onClick={() => deleteSport(sport.id)}
+                  >
+                    <TrashIcon />
+                  </button>
+                </div>
               </td>
             </tr>
           ))}
         </tbody>
       </table>
+
+      <Dialog
+        header="Edit Sport"
+        visible={visible}
+        style={{ width: "50vw" }}
+        onHide={handleCloseModal}
+      >
+        {selectedSport && (
+          <EditSportModal sport={selectedSport} onClose={handleCloseModal} />
+        )}
+      </Dialog>
     </div>
   );
 };

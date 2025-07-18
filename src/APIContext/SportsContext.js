@@ -72,6 +72,28 @@ export const SportsProvider = ({ children }) => {
     }
   };
 
+  const updateSport = async (id, data) => {
+    const accessToken = localStorage.getItem("accessToken");
+    const headers = {
+      Authorization: `Bearer ${accessToken}`,
+    };
+  
+    if (!(data instanceof FormData)) {
+      headers["Content-Type"] = "application/json";
+    }
+  
+    try {
+      const response = await axiosInstance.patch(`/adminpanel/sports/${id}/`, data, { headers });
+      await fetchSports();
+      showToast("success", "Updated", "Sport updated successfully");
+      return { success: true, data: response.data };
+    } catch (err) {
+      const errorMsg = err.response?.data?.image?.[0] || "Failed to update sport";
+      showToast("error", "Error", errorMsg);
+      return { success: false, error: errorMsg };
+    }
+  };
+
   useEffect(() => {
     fetchSports();
   }, [fetchSports]);
@@ -85,6 +107,7 @@ export const SportsProvider = ({ children }) => {
         createSport,
         deleteSport,
         toggleSportActive,
+        updateSport,
         toastRef
       }}
     >

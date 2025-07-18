@@ -108,3 +108,14 @@ button.mt-event {
     justify-content: center;
     gap: 20px;
 }
+
+.sports-action-btns {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 25px;
+}
+
+.sports-action-btns button.mt-event {
+  font-size: 22px;
+}
