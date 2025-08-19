@@ -1,4 +1,4 @@
-import React, { createContext, useState, useContext, useEffect, useRef } from "react";
+import React, { createContext, useState, useContext, useEffect, useRef, useCallback } from "react";
 import axiosInstance from "../Config/axios";
 import { Toast } from "primereact/toast";
 
@@ -68,6 +68,8 @@ export const LoginProvider = ({ children }) => {
   };
 
   useEffect(() => {
+
+    
     const storedUser = localStorage.getItem("user");
     if (storedUser) {
       setUser(JSON.parse(storedUser));

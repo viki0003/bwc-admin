@@ -19,7 +19,7 @@ const ViewEvent = () => {
           </div>
           <div className="form-item">
             <label>Date</label>
-            <input type="date" />
+            <input name="event_date" type="text" placeholder="mm-dd-yyy" onFocus={(e) => e.target.type = 'date'} onBlur={(e) => e.target.type = 'text'}/>
           </div>
 
           <div className="form-item">

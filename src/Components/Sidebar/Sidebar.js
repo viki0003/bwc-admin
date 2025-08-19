@@ -56,8 +56,8 @@ const Sidebar = () => {
       </div>
 
       {/* Scheduler */}
-      <div className={`sidebar-item ${isActive("/scheduler") ? "active" : ""}`}>
-        <Link to="/scheduler">Scheduler</Link>
+      <div className={`sidebar-item ${isActive("/calendar/create-event") ? "active" : ""}`}>
+        <Link to="/calendar/create-event">Calender</Link>
       </div>
 
       {/* Billing (no route yet) */}

@@ -5,6 +5,7 @@ import { PlayerAccountProvider } from "./APIContext/PlayerAccountContext";
 import "./App.css";
 import { useLogin } from "./APIContext/LoginContext";
 import { SportsProvider } from "./APIContext/SportsContext";
+import { SchedulerProvider } from "./APIContext/SchedulerContext";
 
 function App() {
   const { user } = useLogin();
@@ -12,7 +13,9 @@ function App() {
     <ParentProvider user={user}>
       <PlayerAccountProvider>
         <SportsProvider>
+          <SchedulerProvider>
           <Routing />
+          </SchedulerProvider>
         </SportsProvider>
       </PlayerAccountProvider>
     </ParentProvider>

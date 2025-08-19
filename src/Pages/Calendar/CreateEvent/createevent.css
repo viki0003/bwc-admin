@@ -92,3 +92,271 @@ form.map-form textarea {
     margin-bottom: 40px;
     display: block;
 }
+
+.choose-ac,
+.choose-eq{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 25px;
+    width: calc(100% - 20px);
+}
+
+
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.modal {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 400px;
+}
+.modal-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  gap: 20px;
+}
+
+.modal-actions .btn {
+    width: 170px;
+}
+
+.modal .create-event-item form .form-item{
+    width: 100% !important;
+
+}
+
+.map-form{
+    justify-content: center;
+}
+
+.map-form > div{
+    flex: 1 1;
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+form.map-form .form-item {
+    width: 100%;
+}
+
+.map-form-container-2 .p-fileupload.p-fileupload-advanced.p-component {
+    min-height: 140px;
+}
+
+.map-form-container-2 .p-fileupload-buttonbar {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+}
+
+
+.map-form-container-2 .p-fileupload-content {
+    height: 220px;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.map-form-container-2 span.p-button.p-fileupload-choose.p-component {
+    width: 30%;
+    padding: 12px 40px 12px 40px;
+    background: #252525;
+    border: #252525;
+    font-size: 14px;
+}
+
+.map-form-container-2 button.p-button.p-component
+ {
+    width: 30%;
+    padding: 12px 40px 12px 40px;
+    background: #252525;
+    border: #252525;
+    font-size: 14px;
+    
+}
+
+
+.map-form-container-2 button.p-button.p-component.p-disabled
+ {
+    width: 30%;
+    padding: 12px 40px 12px 40px;
+    background: #252525;
+    border: #252525;
+    font-size: 14px;
+    
+}
+
+
+.map-form-container-2 button.p-button.p-component.p-button-icon-only.p-button-text.p-button-rounded.p-button-danger {
+    width: 12%;
+    padding: 0;
+    background: #a32e2e00;
+    border: #c23131;
+    /* font-size: 44px; */
+}
+
+.map-form-container-2 .p-fileupload-row{
+    min-width: 34rem;
+    height: 80px;
+    margin-bottom: 10px;
+    border: 1px solid #25252547;
+    padding: 12px;
+    border-radius: 8px;
+}
+
+.p-fileupload-content > div:nth-last-child(1) {
+    margin-top: 0px;
+    max-height: 200px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.p-fileupload-filename {
+    margin-bottom: 10px;
+}
+
+span.p-fileupload-file-badge.p-badge.p-component.p-badge-warning {
+    margin-left: 20px;
+    width: 100px;
+}
+
+img.p-fileupload-file-thumbnail {
+    margin-right: 20px;
+}
+
+.p-calendar:not(.p-calendar-disabled).p-focus > .p-inputtext {
+    box-shadow: none !important;
+    border: 2px solid black !important;
+    border-right: none !important;
+    border-radius: 8px 0px 0px 8px !important;
+}
+
+button.p-datepicker-trigger.p-button.p-component.p-button-icon-only {
+    box-shadow: none !important;
+    border: 2px solid black !important;
+    border-radius: 0px 8px 8px 0px !important;
+    background-color: #252525;
+}
+
+button.p-datepicker-trigger.p-button.p-component.p-button-icon-only:hover {
+
+    background-color: black;
+}
+
+
+.w-full.p-multiselect.p-component.p-inputwrapper.p-multiselect-chip {
+    background: #EFEFEF;
+    border: 0px;
+    border-radius: 6px;
+    height: 36px;
+    padding: 10px;
+    text-align: left;
+    align-items: center;
+}
+
+.p-multiselect:not(.p-disabled).p-focus{
+    box-shadow: none !important;
+}
+
+.p-multiselect .p-multiselect-label.p-placeholder {
+    color: #000000e3 !important;
+    font-size: 13px !important;
+}
+
+svg.p-icon {
+    pointer-events: auto;
+    width: 10px;
+    height: 12px;
+}
+
+svg.p-icon.p-multiselect-filter-icon {
+    margin-top: -6px;
+}
+
+li.p-multiselect-item {
+    display: flex;
+    width: 100%;
+    gap: 8px;
+    padding: 5px;
+    font-size: 13px;
+    color: black;
+}
+
+.p-checkbox.p-highlight .p-checkbox-box {
+    border-color: #000000ba;
+    background: #000000ba;
+   
+}
+
+
+.p-checkbox .p-checkbox-box {
+    border: 2px solid #d1d5db;
+    background: #ffffff;
+    width: 17px;
+    height: 17px;
+    margin-top: 4px !important;
+    color: #4b5563;
+    border-radius: 23px;
+    transition: background-color 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s;
+    outline-color: transparent;
+}
+
+.p-multiselect-label {
+    gap: 8px;
+    display: flex;
+}
+
+.p-multiselect-token {
+    display: flex;
+    gap: 5px;
+    padding: 5px;
+}
+
+svg.p-icon.p-multiselect-token-icon {
+    width: 16px;
+}
+
+.p-multiselect .p-multiselect-trigger {
+    width: 10px;
+}
+
+.p-multiselect-header {
+    padding: 10px 6px !important;
+}
+
+input.p-multiselect-filter.p-inputtext.p-component {
+    height: 36px;
+    padding: 10px;
+    font-size: 13px;
+}
+
+span.p-multiselect-token-label {
+    font-size: 13px;
+}
+
+
+.form-item.add-remove-btn-con {
+    flex-direction: row !important;
+    width:  calc(20% - 20px) !important;
+}
+
+.add-new-act,
+.add-new-act:hover {
+    background: black !important;
+    color: #FFFF !important;
+    text-align:center !important;
+}

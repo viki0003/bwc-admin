@@ -66,6 +66,7 @@ const Routing = () => {
         <Route path="/our-sports/add-new-sports" element={<AddNewSport />} />
       </Route>
       <Route path="/" element={<Login />} />
+      <Route path="/login" element={<Login />} />
       <Route path="/otp-verify" element={<OTPVerify />} />
     </Routes>
   );
