@@ -78,3 +78,10 @@ form.add-sport-form .form-group .form-fields-details .ff-fields .ff-item input {
     border-color: #c7822d;
     background: #c7822d;
 }
+
+.p-radiobutton .p-radiobutton-box .p-radiobutton-icon {
+    width: 9px;
+    height: 9px;
+    transition-duration: 0.2s;
+    background-color: #ffffff;
+}
